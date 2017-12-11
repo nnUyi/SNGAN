@@ -1,5 +1,5 @@
 # SNGAN
-  An implement of spectral normalization GAN for tensorflow version, spectral normalization is used in this repo to give some constrants to the weights of discriminator
+  - An implement of spectral normalization GAN for tensorflow version, spectral normalization is used in this repo to give some constrants to the weights of discriminator
 
 # Requirements
 
