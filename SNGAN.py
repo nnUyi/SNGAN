@@ -7,7 +7,7 @@ from utils import *
 from glob import glob
 
 class SNGAN:
-    model_name = 'DCGAN'
+    model_name = 'SNGAN'
     
     def __init__(self, input_height=64, input_width=64, input_channels=1, output_height=64, output_width=64, gf_dim=64, df_dim=64, batchsize=64, z_dim = 100, is_crop=False, learning_rate=0.0002  , beta1=0.5, beta2=0.999, input_fname_pattern = '*.jpg', is_grayscale=False, dataset_name = 'celebA', checkpoint_dir = './checkpoint', sample_dir = 'sample', epoch = 30, sess=None):
         self.input_height = input_height
@@ -104,9 +104,9 @@ class SNGAN:
 
             h_conv4_flat = tf.reshape(h_conv4, [self.batchsize, -1])
             # hidden layer_4 fully connected
-            h_fc1_sigmoid = tf.nn.sigmoid(linear(h_conv4_flat, 1024, scope_name='d_fc1', spectral_norm=True, update_collection=update_collection))
+            h_fc1_logits = linear(h_conv4_flat, 1024, scope_name='d_fc1', spectral_norm=True, update_collection=update_collection)
             
-            return h_fc1_sigmoid
+            return h_fc1_logits
 
     def build_model(self):
         # crop image
