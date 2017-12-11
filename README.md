@@ -1,5 +1,5 @@
 # SNGAN
-  A implement of spectral normalization GAN for tensorflow version, spectral normalization is used in this repo to give some constrants to the weights of discriminator
+  An implement of spectral normalization GAN for tensorflow version, spectral normalization is used in this repo to give some constrants to the weights of discriminator
 
 # Requirements
 
@@ -29,6 +29,13 @@
   (4)testing
     
    - Anyway, in this repo, testing processing is taken during training, It samples the training results to the sample(named sample) directory, and stores session in the checkpoint(named checkpoint) directory.
+
+# Results
+
+|sample image|sample image|
+|:-----------------:|:----------------:|
+|![Alt test](/data/train_1.png)|![Alt test](/data/train_2.png)|
+|64*64 resolution|64*64 rosolution||
 
 # Contacts
 
